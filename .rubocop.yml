@@ -27,3 +27,6 @@ Naming/FileName:
 
 Style/HashSyntax:
   Enabled: false
+
+Lint/ScriptPermission:
+  Enabled: false
