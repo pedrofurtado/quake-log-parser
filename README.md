@@ -52,11 +52,11 @@ docker build -t quake-log-parser_specs .
 # Then, run this command how many times you want,
 # after editing local files, and so on, to get
 # feedback from test suite of gem.
-docker run -v $(pwd):/app/ -it quake-log-parser_specs
+docker run --rm -v $(pwd):/app/ -it quake-log-parser_specs
 
 # Or, if you want to run a example of usage of gem,
 # you can run the command below.
-docker run -v $(pwd):/app/ -it quake-log-parser_specs ruby real_example_to_run.rb
+docker run --rm -v $(pwd):/app/ -it quake-log-parser_specs ruby real_example_to_run.rb
 ```
 
 ## Contributing
