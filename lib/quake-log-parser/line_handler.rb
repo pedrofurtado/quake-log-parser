@@ -51,9 +51,25 @@ module QuakeLogParser
         data["game_#{game.id}"] = {
           total_kills: game.total_kills,
           players: game.players.keys,
-          kills: game.kills.map { |kill| { killer: kill.killer, killed: kill.killed, mean_of_death: kill.mean_of_death } },
-          kills_by_players: game.players.sort_by { |_player_name, player| player.kills }.reverse.map { |player_name, player| { player_name => player.kills } },
-          kills_by_means: game.means_of_death.sort_by { |_mean, count| count }.reverse.map { |mean, count| { mean => count } }
+          kills: game.kills.map do |kill|
+            {
+              killer: kill.killer,
+              killed: kill.killed,
+              mean_of_death: kill.mean_of_death
+            }
+          end,
+          kills_by_players: Hash[
+            game.players
+                .sort_by { |_player_name, player| player.kills }
+                .reverse
+                .collect { |_player_name, player| [player.name, player.kills] }
+          ],
+          kills_by_means: Hash[
+            game.means_of_death
+                .sort_by { |_mean, count| count }
+                .reverse
+                .collect { |mean, count| [mean, count] }
+          ]
         }
       end
 
