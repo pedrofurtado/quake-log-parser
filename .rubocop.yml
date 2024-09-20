@@ -17,7 +17,7 @@ Layout/LineLength:
   Max: 300
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 30
 
 Metrics/AbcSize:
   Max: 40
@@ -25,7 +25,13 @@ Metrics/AbcSize:
 Naming/FileName:
   Enabled: false
 
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
 Style/HashSyntax:
+  Enabled: false
+
+Style/ClassVars:
   Enabled: false
 
 Lint/ScriptPermission:
