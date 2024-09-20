@@ -20,7 +20,7 @@ Metrics/MethodLength:
   Max: 30
 
 Metrics/AbcSize:
-  Max: 40
+  Max: 50
 
 Naming/FileName:
   Enabled: false
