@@ -21,6 +21,8 @@ module QuakeLogParser
     def handle_new_kill(line)
       killer, killed, means_of_death = extract_kill_infos_from(line)
 
+      means_of_death.chomp!
+
       current_game.add_kill(QuakeLogParser::Kill.new(killer: killer, killed: killed, mean_of_death: means_of_death))
 
       previous_total_kills = current_game.total_kills
