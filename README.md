@@ -1,6 +1,9 @@
 # Quake Log Parser
 
-[badges aqui]
+[![Maintainability](https://api.codeclimate.com/v1/badges/8bbcb90abf1f392d7e68/maintainability)](https://codeclimate.com/github/pedrofurtado/quake-log-parser/maintainability)
+![CI](https://github.com/pedrofurtado/quake-log-parser/actions/workflows/ci.yaml/badge.svg)
+[![codecov](https://codecov.io/gh/pedrofurtado/quake-log-parser/graph/badge.svg?token=DUC0CORI0N)](https://codecov.io/gh/pedrofurtado/quake-log-parser)
+[![Gem Version](https://badge.fury.io/rb/quake-log-parser.svg)](https://badge.fury.io/rb/quake-log-parser)
 
 Ruby gem for quake log parsing.
 
@@ -20,23 +23,24 @@ Or install it yourself as:
 
     gem install quake-log-parser
 
-## Usage (examples)
-
-### Example 01
+## Usage
 
 ```ruby
 require 'quake-log-parser'
-# ...
+
+if defined?(Rails)
+  QuakeLogParser::Logger.logger = Rails.logger
+else
+  QuakeLogParser::Logger.logger = Logger.new($stdout)
+end
+
+parser = QuakeLogParser::LogReader.new('/path/to/your/quake.log')
+parser.read
+
+puts JSON.pretty_generate(parser.results)
 ```
 
-### Example 02
-
-```ruby
-require 'quake-log-parser'
-# ...
-```
-
-## Execute tests/specs locally
+## Execute tests/specs
 
 To execute gem tests locally, use Docker with the commands below:
 
@@ -49,6 +53,10 @@ docker build -t quake-log-parser_specs .
 # after editing local files, and so on, to get
 # feedback from test suite of gem.
 docker run -v $(pwd):/app/ -it quake-log-parser_specs
+
+# Or, if you want to run a example of usage of gem,
+# you can run the command below.
+docker run -v $(pwd):/app/ -it quake-log-parser_specs ruby real_example_to_run.rb
 ```
 
 ## Contributing
