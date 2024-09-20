@@ -3,7 +3,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/8bbcb90abf1f392d7e68/maintainability)](https://codeclimate.com/github/pedrofurtado/quake-log-parser/maintainability)
 ![CI](https://github.com/pedrofurtado/quake-log-parser/actions/workflows/ci.yml/badge.svg)
 [![codecov](https://codecov.io/gh/pedrofurtado/quake-log-parser/graph/badge.svg?token=DUC0CORI0N)](https://codecov.io/gh/pedrofurtado/quake-log-parser)
-[![Gem Version](https://badge.fury.io/rb/quake-log-parser.svg)](https://badge.fury.io/rb/quake-log-parser)
 
 Ruby gem for quake log parsing.
 
