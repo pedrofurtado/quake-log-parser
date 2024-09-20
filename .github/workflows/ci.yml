@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run tests with Ruby ${{ matrix.ruby-version }}
+      - name: Run tests and quality gates with Ruby ${{ matrix.ruby-version }}
         run: bundle exec rake
 
       - name: Upload coverage to Codecov

@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: bundle install
 
-      - name: Run tests
+      - name: Run tests and quality gates
         run: bundle exec rake
 
       - name: Publish to Rubygems
