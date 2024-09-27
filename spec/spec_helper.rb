@@ -1,3 +1,6 @@
+require './karafka'
+require 'karafka/testing/rspec/helpers'
+
 if ENV['CODECOV_TOKEN']
   require 'simplecov'
   SimpleCov.start
@@ -15,4 +18,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.include Karafka::Testing::RSpec::Helpers
 end

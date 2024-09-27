@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'karafka'
   spec.add_dependency 'karafka-web'
+  spec.add_development_dependency 'karafka-testing'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
