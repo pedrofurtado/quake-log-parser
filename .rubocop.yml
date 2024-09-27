@@ -7,6 +7,12 @@ AllCops:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Style/Next:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
+
 Layout/EndOfLine:
   Enabled: false
 

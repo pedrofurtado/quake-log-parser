@@ -97,7 +97,11 @@ puts JSON.pretty_generate(parser.results)
 
 ```ruby
 # Enter the Karafka console with the command below:
+# docker-compose up --build -d (Wait Kafka components and Karafka consumer to be ready)
 # docker container exec -it quake-log-parser_kafka_consumer_1 bundle exec karafka console
+
+# Then, open a second terminal to see logs of Karafka consumer with the command below:
+# docker container logs -f quake-log-parser_kafka_consumer_1 | grep -i 'quake'
 
 # Then, run the commands below to produce a message to a Kafka topic:
 
@@ -132,7 +136,7 @@ docker run --rm -v $(pwd):/app/ -it quake-log-parser_specs
 
 # Or, if you want to run a example of usage of gem,
 # you can run the command below.
-docker run --rm -v $(pwd):/app/ -it quake-log-parser_specs ruby real_example_to_run.rb
+docker run --rm -v $(pwd):/app/ -it quake-log-parser_specs bundle exec ruby real_example_to_run.rb
 ```
 
 ## Contributing
